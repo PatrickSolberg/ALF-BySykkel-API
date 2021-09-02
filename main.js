@@ -1,13 +1,13 @@
-import {  getStations, getStatus  } from './api.js';
+import { getStations, getStatus } from './api.js';
 
 // google maps
 let map;
 
 const initMap = (lat, lon) => {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: lat, lng: lon },
-    zoom: 17,
-  });
+    map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: lat, lng: lon },
+        zoom: 17,
+    });
 }
 
 // google maps coordinates
@@ -23,12 +23,12 @@ const getUserGeoLoacation = () => {
     const success = position => {
         lat = position.coords.latitude;
         lon = position.coords.longitude;
-        initMap(lat,lon)
+        initMap(lat, lon)
     }
     const error = err => {
         lat = 60.37872786889175;
         lon = 5.3434458482425695;
-        initMap(lat,lon)
+        initMap(lat, lon)
     }
     navigator.geolocation.getCurrentPosition(success, error);
 }
@@ -41,7 +41,7 @@ const initializeLocationMap = () => {
 
 // Generate Random Number for selecting Array index
 const getRandomStation = () => {
-    const stationNumber = Math.floor(Math.random()*99)
+    const stationNumber = Math.floor(Math.random() * 99)
     return stationNumber;
 }
 
@@ -50,13 +50,13 @@ const getStationAvailability = async () => {
     const stations = await getStations();
     const stationsStatus = await getStatus();
     // console.log(stations)
-    
+
     const StationName = stations[stationNumber].name;
     const stationStatusTotal = stationsStatus[stationNumber].num_docks_available;
     const stationStatusCurrentavailable = stationsStatus[stationNumber].num_bikes_available;
     lat = stations[stationNumber].lat;
     lon = stations[stationNumber].lon;
-    
+
 
     return [StationName, stationStatusTotal, stationStatusCurrentavailable];
 }
