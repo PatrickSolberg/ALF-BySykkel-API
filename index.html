@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ALF - BySykkel</title>
+</head>
+<body>
+    <button id="status">Get Status</button>
+    <!-- <button id="getMap" onClick="initMap">Get Map</button> -->
+    <div class="cointainer">
+        <div class="container_map">
+            <div class="loading"></div>
+            <div id="map"></div>
+        </div>
+        <div id="stations_selected"></div>
+        <div id="stations_status"></div>
+        <div id="stationsCurrent"></div>
+    </div>
+</body>
+<script type="module" src="main.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUcU7cYWlYm-6Y6sNfwHxZC4CRQN0dL2o&libraries=&v=weekly" 
+      async defer
+      ></script>
+</html>
