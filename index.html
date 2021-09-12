@@ -8,17 +8,30 @@
     <title>ALF - BySykkel</title>
 </head>
 <body>
-    <button id="status">Get Status</button>
-    <!-- <button id="getMap" onClick="initMap">Get Map</button> -->
-    <div class="cointainer">
-        <div class="container_map">
-            <div class="loading"></div>
-            <div id="map"></div>
+    <header>
+        <nav>
+            <h1>BERGEN BySYKKEL API</h1>
+        </nav>
+    </header>
+    <div class='wrapper'>
+        <div class='row'>
+          <div class='column'>
+            <div class='play-column'>
+                <button id="status">Get Status</button>
+            </div>
+          </div>
+          <div class='column'>
+            <div class='result-column'>
+                <div id="map"></div>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="results">
         <div id="stations_selected"></div>
         <div id="stations_status"></div>
         <div id="stationsCurrent"></div>
-    </div>
+      </div>
 </body>
 <script type="module" src="main.js"></script>
     <script

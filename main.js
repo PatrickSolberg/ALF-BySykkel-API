@@ -46,7 +46,7 @@ const getRandomStation = () => {
 }
 
 const getStationAvailability = async () => {
-    const stationNumber = await getRandomStation();
+    const stationNumber = getRandomStation();
     const stations = await getStations();
     const stationsStatus = await getStatus();
     // console.log(stations)
